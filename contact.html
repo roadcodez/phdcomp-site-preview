@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a quote | PHD Computing</title><meta name="description" content="Request a quote for secure IT asset disposition and electronics recycling in New England.">
+<link rel="icon" href="assets/phd-logo.png"><link rel="stylesheet" href="styles.css"></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap bar">
+<a class="logo" href="index.html" aria-label="PHD Computing home"><img src="assets/phd-logo.png" alt="" width="44" height="44"><span>PHD Computing<small>IT Asset Disposition</small></span></a>
+<button class="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav id="nav"><a href="services.html">Services</a><a href="process.html">How it works</a><a href="security.html">Security</a><a href="partners.html">Our partner</a><a href="industries.html">Industries</a><a class="btn sm" href="contact.html">Request a quote</a></nav></div></header>
+<main id="main"><section style="padding-top:150px"><div class="wrap split"><div><div class="eyebrow">Get started</div><h1 style="font-size:clamp(2rem,4vw,3rem)">Request a quote</h1>
+<p style="color:var(--muted)">Tell us about the equipment and any compliance requirements. A person will reply, usually within one business day.</p>
+<ul class="tick"><li>No obligation</li><li>Clear scope and pricing before we start</li><li>Pickup scheduled around your operations</li></ul></div>
+<form id="quote" action="#" method="post">
+<div class="row"><label>First name<input required name="first" autocomplete="given-name"></label><label>Last name<input required name="last" autocomplete="family-name"></label></div>
+<div class="row"><label>Work email<input required type="email" name="email" autocomplete="email"></label><label>Phone<input type="tel" name="phone" autocomplete="tel"></label></div>
+<div class="row"><label>Company<input name="company" autocomplete="organization"></label><label>State<input name="state" placeholder="e.g. MA, NY, CT" autocomplete="address-level1"></label></div>
+<label>I am inquiring as<select name="type"><option>Business</option><option>Enterprise</option><option>Government / education</option><option>Healthcare</option><option>Other</option></select></label>
+<label>What needs to be retired?<textarea rows="4" name="msg" placeholder="Approximate quantity, locations, any compliance or certificate requirements"></textarea></label>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<button class="btn" type="submit">Send request</button><p class="note" id="status" role="status" aria-live="polite">We use your details only to respond to this request.</p></form></div></section></main>
+<footer><div class="wrap"><div class="cols">
+<div><div class="logo" style="margin-bottom:12px"><img src="assets/phd-logo.png" alt="" width="36" height="36"><span>PHD Computing</span></div><p>Secure IT asset disposition and electronics recycling for businesses across New England and the Northeast.</p></div>
+<div><h4>Company</h4><a href="services.html">Services</a><a href="process.html">How it works</a><a href="security.html">Security</a><a href="partners.html">Our partner</a><a href="industries.html">Industries</a></div>
+<div><h4>Contact</h4><a href="contact.html">Request a quote</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+<div class="fine">&copy; 2026 PHD Computing. All rights reserved.</div></div></footer><script>
+document.getElementById('quote').addEventListener('submit',async e=>{
+ e.preventDefault();const f=e.target,b=f.querySelector('button'),st=document.getElementById('status');
+ b.disabled=true;st.textContent='Sending...';
+ try{const r=await fetch('/api/inquiries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+  const j=await r.json();
+  if(r.ok){f.reset();st.textContent='Thank you. We received your request and will reply soon.';}
+  else{st.textContent=j.error||'Could not send. Please try again.';}
+ }catch(x){st.textContent='Could not send. Please try again.';}
+ b.disabled=false;});
+</script><script>(function(){var b=document.querySelector('.menu'),n=document.getElementById('nav');b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.classList.toggle('x',o)});n.addEventListener('click',function(e){if(e.target.tagName=='A'){n.classList.remove('open');b.classList.remove('x');b.setAttribute('aria-expanded',false)}})})()</script><script>(function(){var d=document.documentElement;d.classList.add('js');var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;var els=document.querySelectorAll('.rv,.steps');if(rm){els.forEach(function(e){e.classList.add('in')});return}els.forEach(function(e,i){e.style.transitionDelay=(e.classList.contains('rv')?(i%3)*80:0)+'ms'});function chk(){var h=innerHeight*.92;els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<h)e.classList.add('in')})}addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);chk();setTimeout(chk,150);setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},6000);if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.hero,.cta-band').forEach(function(h){h.addEventListener('mousemove',function(e){var r=h.getBoundingClientRect();h.style.setProperty('--mx',(e.clientX-r.left)+'px');h.style.setProperty('--my',(e.clientY-r.top)+'px')})})}})()</script></body></html>
