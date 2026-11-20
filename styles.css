@@ -79,3 +79,7 @@ nav a[aria-current=page]{color:#fff;border-bottom:2px solid #e04848;padding-bott
 .step:before{z-index:1}
 @media(max-width:860px){.steps:before{display:none}.hero.big{padding:150px 0 80px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.js .steps:before{transform:none}html{scroll-behavior:auto}}
+
+/* --- selling-points band --- */
+.band{background:linear-gradient(160deg,#0d0d0d,#2a2a2a);color:#fff}
+.band .eyebrow{color:#ff8a8a}.band p{color:#d2d2d2}.band h2{max-width:520px}
